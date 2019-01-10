@@ -95,7 +95,7 @@
     // 让系统的侧滑返回生效
     self.interactivePopGestureRecognizer.enabled = YES;
     if (self.childViewControllers.count > 0) {
-        if (viewController == self.childViewControllers[0]) {
+        if (viewController == self.childViewControllers[0] || viewController.tz_interactivePopDisabled) {
             self.interactivePopGestureRecognizer.delegate = self.tz_popDelegate; // 不支持侧滑
         } else {
             self.interactivePopGestureRecognizer.delegate = nil; // 支持侧滑
